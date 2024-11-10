@@ -22,7 +22,7 @@ jobs:
     - name: Clone symlinked repository
       run: |
         if [ ! -d "Machina/app/src/cpp/gvisor-tap-vsock" ]; then
-          git clone https://github.com/containers/gvisor-tap-vsock Machina/app/src/cpp/gvisor-tap-vsock
+          git clone https://github.com/containers/gvisor-tap-vsock /home/runner/work/Machina/Machina/app/src/cpp/gvisor-tap-vsock
         fi
 
     - name: Grant execute permission for gradlew
