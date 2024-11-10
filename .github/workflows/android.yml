@@ -19,7 +19,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: gradle
-        submodules: 'true'
+    - name: Clone symlinked repository
+      run: |
+        if [ ! -d "Machina/app/src/cpp/gvisor-tap-vsock" ]; then
+          git clone https://github.com/your-org/your-symlinked-repo.git Machina/app/src/cpp/gvisor-tap-vsock
+        fi
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
